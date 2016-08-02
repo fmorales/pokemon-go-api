@@ -1,9 +1,0 @@
-# Python Compiled Bytecode
-*.pyc
-__pycache__/
-
-# IntelliJ - PyCharm
-.idea
-
-# Mac OSX
-.DS_Store
