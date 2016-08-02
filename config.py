@@ -26,8 +26,8 @@ proxies = {
 }
 s=requests.session()
 if use_proxy:
-	s.proxies.update(proxies)
-	s.verify=False
+    s.proxies.update(proxies)
+    s.verify=False
 s.headers.update({'User-Agent':'Niantic App'})
 #session end
 ###########################################################################################
@@ -40,7 +40,7 @@ PTC_CLIENT_SECRET = 'w8ScCUXJQc6kXKw8FiOhd8Fixzht18Dq3PEVkUCP5ZPxtgyWsbTvWHFLm2w
 SESSION = requests.session()
 SESSION.headers.update({'User-Agent': 'Niantic App'})
 if use_proxy:
-	SESSION.proxies.update(proxies)
-	SESSION.verify = False
+    SESSION.proxies.update(proxies)
+    SESSION.verify = False
 DEBUG = True
 ###########################################################################################
