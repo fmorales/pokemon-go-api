@@ -33,7 +33,7 @@ def start_private_show(access_token,ltype,loc):
     new_rcp_point='https://%s/rpc'%(local_ses.rpc_server,)
     while(True):
         work_stop(local_ses,new_rcp_point)
-    
+
 def walk_random():
     COORDS_LATITUDE, COORDS_LONGITUDE, COORDS_ALTITUDE=location.get_location_coords()
     COORDS_LATITUDE=location.l2f(COORDS_LATITUDE)
@@ -42,17 +42,17 @@ def walk_random():
     COORDS_LATITUDE=COORDS_LATITUDE+config.steps
     COORDS_LONGITUDE=COORDS_LONGITUDE+config.steps
     location.set_location_coords(COORDS_LATITUDE, COORDS_LONGITUDE, COORDS_ALTITUDE)
-    
+
 def split_list(a_list):
     half = len(a_list)/2
     return a_list[:half], a_list[half:]
-    
+
 def work_half_list(part,ses,new_rcp_point):
     for t in part:
         if config.debug:
             print '[!] farming pokestop..'
         work_with_stops(t,ses,new_rcp_point)
-    
+
 def work_stop(local_ses,new_rcp_point):
     proto_all=logic.all_stops(local_ses)
     all_stops=api.use_api(new_rcp_point,proto_all)
@@ -81,7 +81,7 @@ def work_stop(local_ses,new_rcp_point):
     else:
         walk_random()
         work_stop(local_ses,new_rcp_point)
-        
+
 def work_with_stops(current_stop,ses,new_rcp_point):
     Kinder= logic.gen_stop_data(ses,current_stop)
     tmp_api=api.use_api(new_rcp_point,Kinder)

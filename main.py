@@ -38,7 +38,7 @@ def get_acces_token(usr,pws,type):
     dirty.accessToken = access_token
     dirty.globalltype = ltype
     return access_token,ltype
-    
+
 def main():
     if platform.system() == 'Windows':
         os.system("title Pokemon GO API Python")
@@ -66,6 +66,6 @@ def main():
             print '[-] access_token bad'
     else:
         print '[!] used type "%s" only Google or PTC valid'%(dirty.argsStored.type.lower())
-    
+
 if __name__ == '__main__':
     main()
